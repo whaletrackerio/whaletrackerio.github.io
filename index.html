@@ -539,6 +539,65 @@
       text-decoration: underline;
     }
 
+    /* ====== FOOTER GLOBAL ====== */
+    .site-footer {
+      margin-top: 18px;
+      background: rgba(15,23,42,0.96);
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.3);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.85);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 18px 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .footer-section h4 {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-section p {
+      font-size: 0.78rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section ul li {
+      margin: 4px 0;
+    }
+
+    .footer-section a {
+      color: #22c55e;
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(51,65,85,0.9);
+      text-align: center;
+      padding: 8px 12px 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      opacity: 0.9;
+    }
+
     @media (max-width: 800px) {
       body {
         padding: 12px;
@@ -728,6 +787,38 @@
       </div>
     </div>
   </div>
+
+  <!-- FOOTER GLOBAL DU SITE -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>WhaleTracker</h4>
+        <p>Suivi simple de quelques grosses baleines publiques sur Bitcoin, Ethereum, BSC et PulseChain.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="legal.html">Mentions légales</a></li>
+          <li><a href="privacy.html">Politique de confidentialité</a></li>
+          <li><a href="terms.html">Conditions d’utilisation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>À propos</h4>
+        <p>
+          WhaleTracker est un outil personnel d’observation on-chain, à titre informatif uniquement.
+          Aucune recommandation financière n’est fournie.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 WhaleTracker • Tous droits réservés.
+    </div>
+  </footer>
 
   <script>
     const ETHERSCAN_API_KEY = "5QD6AF5A7FDHG373RPVNTJJKZK59RF86HD";
@@ -1153,3 +1244,4 @@
   </script>
 </body>
 </html>
+
