@@ -38,7 +38,8 @@
       min-height: 100vh;
       padding: 24px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;      /* <<< colonne, plus côte à côte */
+      align-items: center;
       position: relative;
       overflow-x: hidden;
     }
@@ -46,6 +47,7 @@
     .container {
       width: 100%;
       max-width: 1200px;
+      flex: 1 0 auto;              /* prend la hauteur disponible */
     }
 
     .card {
@@ -539,16 +541,26 @@
       text-decoration: underline;
     }
 
-    /* -------- Footer global en bas de page -------- */
+    /* Footer global tout en bas */
     .site-footer {
-      margin-top: 24px;
-      padding: 20px 18px 24px;
-      background: rgba(15,23,42,0.95);
-      border-radius: 18px;
-      border: 1px solid rgba(148,163,184,0.35);
-      box-shadow: 0 10px 26px rgba(15,23,42,0.75);
-      font-size: 0.82rem;
+      width: 100%;
+      max-width: 1200px;
+      flex-shrink: 0;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(148,163,184,0.25);
+      font-size: 0.78rem;
       color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .site-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .site-footer a {
@@ -558,38 +570,6 @@
 
     .site-footer a:hover {
       text-decoration: underline;
-    }
-
-    .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: space-between;
-    }
-
-    .footer-column {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .footer-column h4 {
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      line-height: 1.8;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 18px;
-      font-size: 0.78rem;
-      color: #64748b;
     }
 
     @media (max-width: 800px) {
@@ -607,6 +587,11 @@
       }
       th:nth-child(4), td:nth-child(4) {
         display: none;
+      }
+      .site-footer {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -664,7 +649,6 @@
 
       <!-- Bloc pub AdSense -->
       <div class="ad-banner">
-        <!-- Quand tu auras ton bloc, remplace 1234567890 par le vrai data-ad-slot -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-1012970945258326"
@@ -780,33 +764,18 @@
         Dernière mise à jour : <span id="last-refresh" style="margin-left:4px;">--:--:--</span>
       </div>
     </div>
-
-    <!-- Footer global, sous la carte -->
-    <footer class="site-footer">
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h4>WhaleTracker</h4>
-          <p>
-            Suivi simple de quelques grosses baleines publiques sur Bitcoin, Ethereum, BSC et PulseChain.
-          </p>
-        </div>
-
-        <div class="footer-column">
-          <h4>Informations légales</h4>
-          <ul>
-            <li><a href="legal.html">Mentions légales</a></li>
-            <li><a href="privacy.html">Politique de confidentialité</a></li>
-            <li><a href="terms.html">Conditions d’utilisation</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        © 2025 WhaleTracker • Tous droits réservés.
-      </div>
-    </footer>
   </div>
+
+  <!-- Footer global en bas de page -->
+  <footer class="site-footer">
+    <div>© 2025 WhaleTracker • Tous droits réservés.</div>
+    <div class="site-footer-links">
+      <a href="legal.html">Mentions légales</a>
+      <a href="privacy.html">Politique de confidentialité</a>
+      <a href="terms.html">Conditions d’utilisation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
 
   <script>
     const ETHERSCAN_API_KEY = "5QD6AF5A7FDHG373RPVNTJJKZK59RF86HD";
