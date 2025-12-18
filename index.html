@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
   <meta name="impact-site-verification" value="4c751480-1285-40bc-b439-ba63a63332e2">
+  <meta charset="UTF-8" />
   <title>WhaleTracker – Baleines BTC / ETH / BSC / PulseChain</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google AdSense (tu peux laisser, mais les pubs ne s’affichent que si AdSense valide le site) -->
+  <!-- Google AdSense (gardé si tu veux plus tard, mais pas utilisé ici) -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1012970945258326"
     crossorigin="anonymous"></script>
@@ -167,71 +168,63 @@
       margin-bottom: 10px;
     }
 
-    /* ✅ BLOC SPONSOR AU BON ENDROIT (le grand rectangle) */
+    /* ✅ BLOC SPONSORISÉ DANS LE RECTANGLE (réduit et collé à gauche) */
     .sponsor-hero {
       margin: 12px 0 14px;
-      padding: 18px 22px;
+      padding: 16px 18px;
       border-radius: 18px;
       border: 1px dashed rgba(148,163,184,0.35);
       background: radial-gradient(circle at top, rgba(15,23,42,0.92), rgba(15,23,42,0.85));
+      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+
+      width: 58%;
+      max-width: 640px;
+      margin-right: auto;
+      margin-left: 0;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      min-height: 86px;
+      min-height: 92px;
     }
 
-    .sponsor-left {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .sponsor-badge {
-      display: inline-flex;
+    .sponsor-left { display: flex; flex-direction: column; gap: 6px; }
+    .sponsor-pill {
       width: fit-content;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.55);
-      background: rgba(34,197,94,0.10);
+      border: 1px solid rgba(34,197,94,0.7);
+      background: rgba(34,197,94,0.12);
       color: #bbf7d0;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .sponsor-left h3 {
-      margin: 0;
-      font-size: 1.02rem;
-      color: #e5e7eb;
-      letter-spacing: 0.02em;
-    }
+    .sponsor-title { font-size: 1.05rem; font-weight: 700; }
+    .sponsor-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.35; }
 
-    .sponsor-left p {
-      margin: 0;
+    .sponsor-cta {
+      border-radius: 999px;
+      border: 1px solid rgba(34,197,94,0.9);
+      background: radial-gradient(circle at top, rgba(34,197,94,0.25), rgba(15,23,42,1));
+      color: #ecfdf5;
+      padding: 10px 16px;
       font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.35;
-    }
-
-    .sponsor-btn {
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform .12s ease-out, box-shadow .12s ease-out, background .12s ease-out;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.85);
-      background: radial-gradient(circle at top, rgba(34,197,94,0.22), rgba(15,23,42,1));
-      color: #ecfdf5;
-      text-decoration: none;
-      font-size: 0.82rem;
-      white-space: nowrap;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+      gap: 8px;
     }
 
-    .sponsor-btn:hover {
-      transform: translateY(-0.5px);
-      box-shadow: 0 0 16px rgba(34,197,94,0.6);
+    .sponsor-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(34,197,94,0.45);
+      background: rgba(15,23,42,1);
     }
 
     .table-wrapper {
@@ -412,7 +405,7 @@
       color: var(--muted);
     }
 
-    /* DONATION CARD */
+    /* DONATION */
     .donation-card {
       position: relative;
       z-index: 3;
@@ -426,14 +419,13 @@
       box-shadow: 0 14px 30px rgba(15,23,42,0.75);
     }
 
-    .donation-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.86rem; }
+    .donation-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:.86rem; }
     .donation-header span.icon { font-size: 1.05rem; }
     .donation-header strong { letter-spacing: 0.03em; }
-
     .donation-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
 
-    .donation-row { display: flex; align-items: center; margin-top: 4px; gap: 6px; font-size: 0.78rem; }
-    .donation-label { width: 42px; font-weight: 600; color: #e5e7eb; }
+    .donation-row { display:flex; align-items:center; margin-top:4px; gap:6px; font-size:.78rem; }
+    .donation-label { width:42px; font-weight:600; color:#e5e7eb; }
 
     .donation-address {
       flex: 1;
@@ -445,9 +437,9 @@
       white-space: nowrap;
     }
 
-    .donation-footer { display: flex; justify-content: flex-end; margin-top: 8px; }
+    .donation-footer { display:flex; justify-content:flex-end; margin-top:8px; }
 
-    /* Partenaires / affiliation */
+    /* PARTENAIRES */
     .partners-section {
       margin: 18px 0 4px;
       padding: 14px 16px;
@@ -474,14 +466,8 @@
       background: rgba(15,23,42,0.96);
     }
 
-    .partner-card strong { display: block; margin-bottom: 2px; }
-
-    .partner-card a {
-      color: #22c55e;
-      text-decoration: none;
-      font-size: 0.78rem;
-    }
-
+    .partner-card strong { display:block; margin-bottom:2px; }
+    .partner-card a { color:#22c55e; text-decoration:none; font-size:.78rem; }
     .partner-card a:hover { text-decoration: underline; }
 
     /* Footer global */
@@ -500,9 +486,8 @@
       gap: 8px;
     }
 
-    .site-footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
-
-    .site-footer a { color: #22c55e; text-decoration: none; }
+    .site-footer-links { display:flex; flex-wrap:wrap; gap:10px; }
+    .site-footer a { color:#22c55e; text-decoration:none; }
     .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 800px) {
@@ -511,8 +496,19 @@
       .header { align-items: flex-start; }
       .donation-card { width: 100%; }
       th:nth-child(4), td:nth-child(4) { display: none; }
-      .site-footer { font-size: 0.75rem; flex-direction: column; align-items: flex-start; }
-      .sponsor-hero { flex-direction: column; align-items: flex-start; }
+
+      /* ✅ Sur mobile, le bloc sponsor repasse en pleine largeur */
+      .sponsor-hero{
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .site-footer {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -528,7 +524,7 @@
         <div class="badges">
           <div class="badge">
             <span class="dot"></span>
-            <span>Pas d’API → aucun risque d’erreur API(NOTOK)</span>
+            <span>Pas d’API → aucun risque d’erreur API (NOTOK)</span>
           </div>
           <div class="badge">
             <span>👀</span><span>Cliquez sur “Explorer” pour voir les détails en temps réel</span>
@@ -546,24 +542,22 @@
 
       <div id="stats-global" class="stats-global"></div>
 
-      <!-- ✅ ICI : le grand rectangle devient le sponsor -->
+      <!-- ✅ RECTANGLE SPONSORISÉ (à gauche, réduit, ne touche plus la baleine) -->
       <div class="sponsor-hero">
         <div class="sponsor-left">
-          <span class="sponsor-badge">SPONSORISÉ</span>
-          <h3>Votre pub ici</h3>
-          <p>
+          <div class="sponsor-pill">Sponsorisé</div>
+          <div class="sponsor-title">Votre pub ici</div>
+          <div class="sponsor-sub">
             Bots de trading • Signaux crypto • Outils premium<br>
             Bitcoin • Ethereum • PulseChain
-          </p>
+          </div>
         </div>
-        <div class="sponsor-right">
-          <a class="sponsor-btn"
-             href="https://ton-lien-affiliation-ou-sponsor.com"
-             target="_blank"
-             rel="noopener">
-            Découvrir →
-          </a>
-        </div>
+
+        <a class="sponsor-cta"
+           href="https://ton-lien-affiliation-ou-sponsor.com"
+           target="_blank" rel="noopener">
+          Découvrir →
+        </a>
       </div>
 
       <div class="table-wrapper">
@@ -598,9 +592,7 @@
           <span class="icon">🙏</span>
           <strong>Vous aimez WhaleTracker ?</strong>
         </div>
-        <div class="donation-sub">
-          Vous pouvez soutenir le projet avec un petit don :
-        </div>
+        <div class="donation-sub">Vous pouvez soutenir le projet avec un petit don :</div>
 
         <div class="donation-row">
           <span class="donation-label">ETH</span>
@@ -625,6 +617,7 @@
         </div>
       </div>
 
+      <!-- Partenaires & liens d'affiliation -->
       <div class="partners-section">
         <h3>Outils & partenaires recommandés 🧰</h3>
         <p>Certains liens ci-dessous peuvent être des liens d’affiliation : ils ne changent rien pour vous, mais soutiennent WhaleTracker.</p>
@@ -677,24 +670,18 @@
       { name: "Silk Road (FBI Confiscated)", network: "bitcoin", address: "bc1qa5wkgaew2dkv56kfvj49j0av5nml45x9ek9hz6", type: "Gov / Confiscated" },
       { name: "Binance BTCB Reserve", network: "bitcoin", address: "3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb", type: "Bridge Reserve" },
       { name: "Mr. 100", network: "bitcoin", address: "1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP", type: "Unknown whale" },
-      { name: "Whale 1LdRcd…", network: "bitcoin", address: "1LdRcdxfbSnmCYYNdeYpUnztiYzVfBEQeC", type: "Unknown whale" },
-      { name: "OKEx Whale", network: "bitcoin", address: "3MgEAFWu1HKSnZ5ZsC8qf61ZW18xrP5pgd", type: "Exchange" },
-      { name: "Whale 1AC4fM…", network: "bitcoin", address: "1AC4fMwgY8j9onSbXEWEh6Zan8QGMSdmtA", type: "Unknown whale" },
 
       { name: "Binance: Hot Wallet 20", network: "ethereum", address: "0xf977814e90dA44bFA03b6295A0616a897441aceC", type: "Exchange" },
-      { name: "Binance 14", network: "ethereum", address: "0x28C6c06298d514Db089934071355E5743bf21d60", type: "Exchange" },
-      { name: "Binance 15", network: "ethereum", address: "0x21a31Ee1afC51d94C2eFcCAa2092aD1028285549", type: "Exchange" },
       { name: "Kraken 4", network: "ethereum", address: "0x267be1C1D684F78cb4F6a176C4911b741E4FfDc0", type: "Exchange" },
       { name: "Beacon Deposit Contract", network: "ethereum", address: "0x00000000219ab540356cBB839Cbe05303d7705Fa", type: "Staking / Protocol" },
       { name: "WETH9 Contract", network: "ethereum", address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", type: "DeFi / WETH" },
-      { name: "Robinhood: Cold Wallet 1", network: "ethereum", address: "0x40B38765696e3d5d8d9d834D8AaD4bB6e418E489", type: "Exchange / Custody" },
       { name: "Bitfinex: Cold Wallet", network: "ethereum", address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", type: "Exchange" },
       { name: "Vitalik Buterin (vitalik.eth)", network: "ethereum", address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045", type: "Founder / Individual" },
 
       { name: "Binance: SAFU Wallet", network: "bsc", address: "0x4b16c5de96eb2117bbe5fd171e4d203624b014aa", type: "SAFU / Reserve" },
       { name: "Venus: vBNB (big protocol)", network: "bsc", address: "0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63", type: "DeFi Protocol" },
       { name: "BNB Bridge Exploiter", network: "bsc", address: "0x489a8756c18c0b8b24ec2a2b9ff3d4d447f79bec", type: "Exploit wallet" },
-      { name: "Binance: Hot Wallet 6", network: "bsc", address: "0x8894e0a0c962cb723c1976a4421c95949be2d4e3", type: "Exchange" },
+      { name: "WBNB (Core)", network: "bsc", address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", type: "WBNB / Core token" },
 
       { name: "PulseChain PLS (core)", network: "pulsechain", address: "0xA1077a294dDE1B09bB078844df40758a5D0f9a27", type: "Core / System" },
       { name: "PulseX (PLSX)", network: "pulsechain", address: "0x95B303987A60C71504D99Aa1b13B4DA07b0790ab", type: "DEX / Protocol" },
@@ -759,9 +746,7 @@
     }
 
     async function computeEthereumPersonality(wallet) {
-      if (!ETHERSCAN_API_KEY) {
-        return "Clé API Etherscan manquante → impossible de déterminer la personnalité on-chain.";
-      }
+      if (!ETHERSCAN_API_KEY) return "Clé API Etherscan manquante → impossible d’analyser.";
 
       const url = "https://api.etherscan.io/api"
         + "?module=account&action=txlist"
@@ -772,8 +757,9 @@
       const res = await fetch(url);
       if (!res.ok) return "Erreur lors de l’appel à Etherscan.";
       const data = await res.json();
+
       if (data.status !== "1" || !Array.isArray(data.result) || data.result.length === 0) {
-        return "Pas assez de transactions pour analyser la personnalité (adresse trop récente ou inactive).";
+        return "Pas assez de transactions pour analyser (adresse trop récente ou inactive).";
       }
 
       const txs = data.result;
@@ -795,10 +781,7 @@
         if (from === addrLower) outgoing++; else incoming++;
         if (tx.input && tx.input !== "0x") contractCalls++;
         sumValueEth += valueEth;
-        if (ts > 0) {
-          if (ts < minTime) minTime = ts;
-          if (ts > maxTime) maxTime = ts;
-        }
+        if (ts > 0) { minTime = Math.min(minTime, ts); maxTime = Math.max(maxTime, ts); }
       }
 
       const avgValueEth = sumValueEth / txCount;
@@ -806,15 +789,15 @@
       const newestDays = (nowSec - maxTime) / 86400;
       const contractRatio = contractCalls / txCount;
 
-      if (txCount < 3 && oldestDays > 180) return "Holder discret / long terme (très peu de mouvements on-chain, historique ancien).";
+      if (txCount < 3 && oldestDays > 180) return "Holder discret / long terme (très peu de mouvements).";
       if (contractRatio > 0.6 && txCount >= 15) return newestDays < 7
-        ? "Trader / utilisateur DeFi très actif récemment (beaucoup de swaps et d’interactions avec des contrats)."
-        : "Trader / utilisateur DeFi actif (nombreux contrats appelés, profil orienté trading et yield).";
-      if (incoming > outgoing * 2 && txCount >= 10) return "Whale accumulatrice (plus d’entrées que de sorties, profil accumulation / réserve).";
-      if (outgoing > incoming * 2 && txCount >= 10) return "Adresse en distribution / prise de profits (plus de sorties que d’entrées).";
-      if (txCount > 25 && oldestDays < 30) return "Adresse hyper active sur le dernier mois (profil opportuniste / swing trader).";
-      if (avgValueEth > 100 && txCount >= 5) return "Gros portefeuille / high-net-worth (transactions moyennes élevées, profil baleine prudente).";
-      return "Profil mixte (un peu de trading, un peu de holding, comportement relativement diversifié).";
+        ? "Trader / DeFi très actif récemment (beaucoup d’interactions contrats)."
+        : "Trader / DeFi actif (profil orienté trading/yield).";
+      if (incoming > outgoing * 2 && txCount >= 10) return "Whale accumulatrice (plus d’entrées que de sorties).";
+      if (outgoing > incoming * 2 && txCount >= 10) return "Adresse en distribution / prise de profits (plus de sorties).";
+      if (txCount > 25 && oldestDays < 30) return "Adresse hyper active sur le dernier mois (profil opportuniste).";
+      if (avgValueEth > 100 && txCount >= 5) return "Gros portefeuille (transactions moyennes élevées).";
+      return "Profil mixte (trading + holding, comportement diversifié).";
     }
 
     async function analyzeWalletWithBot(w) {
@@ -828,36 +811,34 @@
       let style = "", horizon = "", assets = "", notes = "";
       let tags = [];
 
-      const t = (w.type || "").toLowerCase();
-
-      if (t.includes("exchange")) {
+      if (w.type && w.type.toLowerCase().includes("exchange")) {
         style = "Portefeuille d’exchange centralisée / custodial.";
         horizon = "Court terme / logistique (dépôts/retraits clients).";
-        notes = "Ne reflète pas un investisseur individuel mais la gestion de liquidité de la plateforme.";
+        notes = "Ne reflète pas un investisseur individuel mais la gestion de liquidité.";
         tags.push("Exchange","Custodial");
-      } else if (t.includes("staking")) {
+      } else if (w.type && w.type.toLowerCase().includes("staking")) {
         style = "Contrat de staking / protocole.";
         horizon = "Long terme (sécurisation du réseau).";
         notes = "Adresse utilisée pour sécuriser le réseau et percevoir des rewards.";
         tags.push("Staking","Long terme");
-      } else if (t.includes("exploit") || t.includes("hack")) {
+      } else if (w.type && (w.type.toLowerCase().includes("exploit") || w.type.toLowerCase().includes("hack"))) {
         style = "Adresse liée à un hack / exploit.";
-        horizon = "Fonds très surveillés, souvent immobiles.";
+        horizon = "Fonds surveillés, souvent immobiles.";
         notes = "Risque de blacklist / sanctions.";
         tags.push("Hack","Risque élevé");
-      } else if (t.includes("token rh")) {
+      } else if (w.type && w.type.toLowerCase().includes("token rh")) {
         style = "Adresse liée à l’écosystème Richard Heart.";
         horizon = "Long terme / spéculatif sur HEX / PulseChain.";
         notes = "Permet de suivre l’activité de l’écosystème RH.";
         tags.push("RH","PulseChain");
-      } else if (t.includes("core")) {
+      } else if (w.type && w.type.toLowerCase().includes("core")) {
         style = "Adresse cœur de protocole / système.";
         horizon = "Très long terme, structurel.";
         notes = "Adresse critique pour le fonctionnement du réseau.";
         tags.push("Core","System");
-      } else if (t.includes("dex")) {
+      } else if (w.type && w.type.toLowerCase().includes("dex")) {
         style = "Contrat DEX (échange décentralisé).";
-        horizon = "Flux continu de swaps, LP, farming.";
+        horizon = "Flux continu de swaps / LP / farming.";
         notes = "Adresse utilisée pour exécuter les échanges sur le DEX.";
         tags.push("DEX","DeFi");
       } else {
@@ -869,26 +850,26 @@
 
       switch (w.network) {
         case "bitcoin": assets = "BTC uniquement."; break;
-        case "ethereum": assets = "ETH + tokens ERC-20 (DeFi, stablecoins, memecoins…)."; break;
+        case "ethereum": assets = "ETH + tokens ERC-20 (DeFi, stablecoins…)."; break;
         case "bsc": assets = "BNB + tokens BEP-20."; break;
-        case "pulsechain": assets = "PLS, PLSX, INC, HEX et autres tokens PulseChain."; break;
+        case "pulsechain": assets = "PLS, PLSX, INC, HEX et tokens PulseChain."; break;
         default: assets = "Actifs principaux du réseau.";
       }
 
       const tagsHtml = tags.length
-        ? "<p>" + tags.map(tg => `<span class="bot-tag">${tg}</span>`).join(" ") + "</p>"
+        ? "<p>" + tags.map(t => `<span class="bot-tag">${t}</span>`).join(" ") + "</p>"
         : "";
 
       bodyEl.innerHTML =
         `${tagsHtml}
-         <p><span class="label">Style probable :</span> ${style}</p>
-         <p><span class="label">Horizon :</span> ${horizon}</p>
-         <p><span class="label">Actifs principaux :</span> ${assets}</p>
-         <p><span class="label">Personnalité probable :</span> <span id="bot-personality-line">Analyse en cours…</span></p>
-         <p><span class="label">Notes d’analyse :</span> ${notes}</p>
-         <p style="margin-top:6px; font-size:0.72rem; color:rgba(148,163,184,0.9);">
-           ⚠️ Analyse expérimentale basée sur quelques heuristiques on-chain.
-         </p>`;
+        <p><span class="label">Style probable :</span> ${style}</p>
+        <p><span class="label">Horizon :</span> ${horizon}</p>
+        <p><span class="label">Actifs principaux :</span> ${assets}</p>
+        <p><span class="label">Personnalité probable :</span> <span id="bot-personality-line">Analyse en cours…</span></p>
+        <p><span class="label">Notes :</span> ${notes}</p>
+        <p style="margin-top:6px; font-size:0.72rem; color:rgba(148,163,184,0.9);">
+          ⚠️ Analyse expérimentale basée sur des heuristiques.
+        </p>`;
 
       panel.style.display = "block";
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1030,7 +1011,7 @@
     updateGlobalStats();
     renderTable(currentFilter);
 
-    setInterval(() => updateLastRefresh(), 30000);
+    setInterval(updateLastRefresh, 30000);
   </script>
 </body>
 </html>
