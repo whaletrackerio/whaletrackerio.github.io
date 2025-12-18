@@ -5,11 +5,6 @@
   <title>WhaleTracker – Baleines BTC / ETH / BSC / PulseChain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google AdSense -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1012970945258326"
-    crossorigin="anonymous"></script>
-
   <style>
     :root {
       --bg: #050816;
@@ -38,7 +33,7 @@
       min-height: 100vh;
       padding: 24px;
       display: flex;
-      flex-direction: column;      /* <<< colonne, plus côte à côte */
+      flex-direction: column;
       align-items: center;
       position: relative;
       overflow-x: hidden;
@@ -47,7 +42,66 @@
     .container {
       width: 100%;
       max-width: 1200px;
-      flex: 1 0 auto;              /* prend la hauteur disponible */
+      flex: 1 0 auto;
+    }
+
+    /* ✅ Bandeau sponsor EN HAUT du site */
+    .sponsor-topbar {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 12px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(34,197,94,0.45);
+      background: rgba(15,23,42,0.88);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+    }
+
+    .sponsor-topbar .s-label {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.18);
+      color: #bbf7d0;
+      border: 1px solid rgba(34,197,94,0.7);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .sponsor-topbar .s-text {
+      flex: 1;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.2rem;
+    }
+
+    .sponsor-topbar .s-text strong {
+      color: #e5e7eb;
+    }
+
+    .sponsor-topbar .s-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(34,197,94,0.95);
+      background: radial-gradient(circle at top, rgba(34,197,94,0.28), rgba(15,23,42,1));
+      color: #ecfdf5;
+      font-size: 0.78rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.12s ease-out;
+    }
+
+    .sponsor-topbar .s-cta:hover {
+      transform: translateY(-0.5px);
+      box-shadow: 0 0 16px rgba(34,197,94,0.65);
     }
 
     .card {
@@ -306,12 +360,7 @@
       border: 1px solid rgba(148,163,184,0.35);
     }
 
-    .network-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-    }
-
+    .network-dot { width: 8px; height: 8px; border-radius: 999px; }
     .net-btc { background: #f97316; }
     .net-eth { background: #6366f1; }
     .net-bsc { background: #eab308; }
@@ -323,10 +372,7 @@
       color: #f9fafb;
     }
 
-    .actions {
-      display: flex;
-      gap: 6px;
-    }
+    .actions { display: flex; gap: 6px; }
 
     .btn-sm {
       font-size: 0.72rem;
@@ -355,9 +401,7 @@
       box-shadow: 0 0 12px rgba(34,197,94,0.5);
     }
 
-    .btn-sm.primary:hover {
-      box-shadow: 0 0 16px rgba(34,197,94,0.7);
-    }
+    .btn-sm.primary:hover { box-shadow: 0 0 16px rgba(34,197,94,0.7); }
 
     .type-pill {
       font-size: 0.72rem;
@@ -409,13 +453,9 @@
       text-align: right;
     }
 
-    .bot-analysis-body p {
-      margin: 2px 0;
-    }
+    .bot-analysis-body p { margin: 2px 0; }
 
-    .bot-analysis-body p span.label {
-      color: var(--muted);
-    }
+    .bot-analysis-body p span.label { color: var(--muted); }
 
     .bot-tag {
       display: inline-flex;
@@ -436,61 +476,6 @@
       color: var(--muted);
     }
 
-    /* Bandeau sponsor */
-    .sponsor-strip {
-      margin: 10px 0 12px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(34,197,94,0.5);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-    }
-
-    .sponsor-strip span.badge {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(34,197,94,0.2);
-      color: #bbf7d0;
-      border: 1px solid rgba(34,197,94,0.7);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .sponsor-strip a {
-      color: #22c55e;
-      text-decoration: none;
-    }
-
-    .sponsor-strip a:hover {
-      text-decoration: underline;
-    }
-
-    /* Bloc pub AdSense */
-    .ad-banner {
-      margin: 10px 0 14px;
-      border-radius: 16px;
-      border: 1px dashed rgba(148,163,184,0.4);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
-      padding: 8px 10px;
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .ad-banner small {
-      font-size: 0.7rem;
-      opacity: 0.8;
-    }
-
     /* Partenaires / affiliation */
     .partners-section {
       margin: 18px 0 4px;
@@ -502,10 +487,7 @@
       font-size: 0.8rem;
     }
 
-    .partners-section h3 {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
+    .partners-section h3 { font-size: 0.9rem; margin-bottom: 6px; }
 
     .partners-section p {
       color: var(--muted);
@@ -526,10 +508,7 @@
       background: rgba(15,23,42,0.96);
     }
 
-    .partner-card strong {
-      display: block;
-      margin-bottom: 2px;
-    }
+    .partner-card strong { display: block; margin-bottom: 2px; }
 
     .partner-card a {
       color: #22c55e;
@@ -537,9 +516,7 @@
       font-size: 0.78rem;
     }
 
-    .partner-card a:hover {
-      text-decoration: underline;
-    }
+    .partner-card a:hover { text-decoration: underline; }
 
     /* Footer global tout en bas */
     .site-footer {
@@ -557,46 +534,48 @@
       gap: 8px;
     }
 
-    .site-footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .site-footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
 
-    .site-footer a {
-      color: #22c55e;
-      text-decoration: none;
-    }
+    .site-footer a { color: #22c55e; text-decoration: none; }
 
-    .site-footer a:hover {
-      text-decoration: underline;
-    }
+    .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 800px) {
-      body {
-        padding: 12px;
-      }
-      .card {
-        padding: 16px;
-      }
-      .header {
-        align-items: flex-start;
-      }
-      .donation-card {
-        width: 100%;
-      }
-      th:nth-child(4), td:nth-child(4) {
-        display: none;
-      }
+      body { padding: 12px; }
+      .card { padding: 16px; }
+      .header { align-items: flex-start; }
+      .donation-card { width: 100%; }
+      th:nth-child(4), td:nth-child(4) { display: none; }
       .site-footer {
         font-size: 0.75rem;
         flex-direction: column;
         align-items: flex-start;
       }
+      .sponsor-topbar {
+        padding: 10px 12px;
+        flex-wrap: wrap;
+      }
+      .sponsor-topbar .s-cta {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- ✅ PUB SPONSORISÉE EN HAUT (remplace AdSense) -->
+  <div class="sponsor-topbar">
+    <span class="s-label">Sponsorisé</span>
+    <div class="s-text">
+      <strong>Votre pub ici</strong> — Bots • Signaux • Outils crypto (BTC / ETH / PLS)
+    </div>
+    <a class="s-cta" href="https://ton-lien-affiliation-ou-sponsor.com" target="_blank" rel="noopener">
+      Découvrir →
+    </a>
+  </div>
+
   <div class="container">
     <div class="card">
       <div class="header">
@@ -613,18 +592,6 @@
             <span>👀</span><span>Cliquez sur “Explorer” pour voir les détails en temps réel</span>
           </div>
         </div>
-      </div>
-
-      <!-- Encart sponsor -->
-      <div class="sponsor-strip">
-        <span class="badge">Sponsorisé</span>
-        <span>
-          Propulsé par
-          <a href="https://ton-lien-affiliation-ou-sponsor.com" target="_blank" rel="noopener">
-            Ton Sponsor Crypto
-          </a>
-          – bots de trading & signaux sur BTC / ETH.
-        </span>
       </div>
 
       <div class="filters">
@@ -646,22 +613,6 @@
       </div>
 
       <div id="stats-global" class="stats-global"></div>
-
-      <!-- Bloc pub AdSense -->
-      <div class="ad-banner">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1012970945258326"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        <noscript>
-          <small>Publicité (activez JavaScript pour voir les annonces).</small>
-        </noscript>
-      </div>
 
       <div class="table-wrapper">
         <table>
@@ -1201,5 +1152,3 @@
   </script>
 </body>
 </html>
-
-
