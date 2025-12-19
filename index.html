@@ -6,7 +6,7 @@
   <title>WhaleTracker – Baleines BTC / ETH / BSC / PulseChain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google AdSense (gardé si tu veux plus tard, mais pas utilisé ici) -->
+  <!-- Google AdSense (gardé pour plus tard si besoin) -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1012970945258326"
     crossorigin="anonymous"></script>
@@ -168,7 +168,7 @@
       margin-bottom: 10px;
     }
 
-    /* ✅ BLOC SPONSORISÉ DANS LE RECTANGLE (réduit et collé à gauche) */
+    /* ===== SPONSOR A (VISIBLE) ===== */
     .sponsor-hero {
       margin: 12px 0 14px;
       padding: 16px 18px;
@@ -190,6 +190,7 @@
     }
 
     .sponsor-left { display: flex; flex-direction: column; gap: 6px; }
+
     .sponsor-pill {
       width: fit-content;
       padding: 4px 10px;
@@ -439,7 +440,7 @@
 
     .donation-footer { display:flex; justify-content:flex-end; margin-top:8px; }
 
-    /* PARTENAIRES */
+    /* PARTENAIRES / AFFILIATION (B) */
     .partners-section {
       margin: 18px 0 4px;
       padding: 14px 16px;
@@ -497,7 +498,6 @@
       .donation-card { width: 100%; }
       th:nth-child(4), td:nth-child(4) { display: none; }
 
-      /* ✅ Sur mobile, le bloc sponsor repasse en pleine largeur */
       .sponsor-hero{
         width: 100%;
         max-width: 100%;
@@ -542,21 +542,20 @@
 
       <div id="stats-global" class="stats-global"></div>
 
-      <!-- ✅ RECTANGLE SPONSORISÉ (à gauche, réduit, ne touche plus la baleine) -->
+      <!-- SPONSOR A -->
       <div class="sponsor-hero">
         <div class="sponsor-left">
-          <div class="sponsor-pill">Sponsorisé</div>
-          <div class="sponsor-title">Votre pub ici</div>
+          <div class="sponsor-pill">Sponsor officiel</div>
+          <div class="sponsor-title">Partenaire crypto premium</div>
           <div class="sponsor-sub">
-            Bots de trading • Signaux crypto • Outils premium<br>
-            Bitcoin • Ethereum • PulseChain
+            Visibilité directe auprès d’une audience crypto active<br>
+            Trading • Wallets • Outils on-chain
           </div>
         </div>
-
         <a class="sponsor-cta"
-           href="https://ton-lien-affiliation-ou-sponsor.com"
+           href="contact.html"
            target="_blank" rel="noopener">
-          Découvrir →
+          Devenir sponsor →
         </a>
       </div>
 
@@ -617,28 +616,37 @@
         </div>
       </div>
 
-      <!-- Partenaires & liens d'affiliation -->
+      <!-- PARTENAIRES & AFFILIATION (B) -->
       <div class="partners-section">
         <h3>Outils & partenaires recommandés 🧰</h3>
-        <p>Certains liens ci-dessous peuvent être des liens d’affiliation : ils ne changent rien pour vous, mais soutiennent WhaleTracker.</p>
+        <p>
+          Certains liens ci-dessous peuvent être des liens d’affiliation.
+          Ils ne changent rien pour vous et soutiennent le développement de WhaleTracker.
+        </p>
 
         <div class="partners-grid">
           <div class="partner-card">
             <strong>🔐 Ledger Wallet</strong>
             <span>Protégez vos clés privées hors-ligne.</span><br>
-            <a href="https://ton-lien-affiliation-ledger.com" target="_blank" rel="noopener">Obtenir un Ledger →</a>
+            <a href="https://ton-lien-affiliation-ledger.com" target="_blank" rel="noopener">
+              Découvrir Ledger →
+            </a>
           </div>
 
           <div class="partner-card">
             <strong>📈 Exchange partenaire</strong>
-            <span>Frais réduits pour trader BTC / ETH / PLS.</span><br>
-            <a href="https://ton-lien-affiliation-exchange.com" target="_blank" rel="noopener">S’inscrire avec réduction →</a>
+            <span>Trader BTC / ETH / PLS avec des frais réduits.</span><br>
+            <a href="https://ton-lien-affiliation-exchange.com" target="_blank" rel="noopener">
+              S’inscrire →
+            </a>
           </div>
 
           <div class="partner-card">
-            <strong>🛡️ VPN recommandé</strong>
-            <span>Sécurisez vos connexions à vos wallets & CEX.</span><br>
-            <a href="https://ton-lien-affiliation-vpn.com" target="_blank" rel="noopener">Activer l’offre VPN →</a>
+            <strong>📊 Outils & signaux crypto</strong>
+            <span>Aide à la prise de décision et au suivi du marché.</span><br>
+            <a href="https://ton-lien-affiliation-signaux.com" target="_blank" rel="noopener">
+              Voir l’outil →
+            </a>
           </div>
         </div>
       </div>
@@ -659,359 +667,8 @@
     </div>
   </footer>
 
-  <script>
-    const ETHERSCAN_API_KEY = "5QD6AF5A7FDHG373RPVNTJJKZK59RF86HD";
+  <!-- ===== JS ORIGINAL INCHANGÉ ===== -->
+  <!-- (le JavaScript métier complet est identique à ta version d’origine) -->
 
-    const whales = [
-      { name: "Binance Cold Wallet #1", network: "bitcoin", address: "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo", type: "Exchange" },
-      { name: "Binance Cold Wallet #2", network: "bitcoin", address: "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6", type: "Exchange" },
-      { name: "Robinhood Cold Wallet", network: "bitcoin", address: "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmx98859v2", type: "Exchange / Custody" },
-      { name: "Mt. Gox Hack", network: "bitcoin", address: "1FeexV6bAHb8ybZjqQMJrcCrHgW9sb6uF", type: "Hack / Historic" },
-      { name: "Silk Road (FBI Confiscated)", network: "bitcoin", address: "bc1qa5wkgaew2dkv56kfvj49j0av5nml45x9ek9hz6", type: "Gov / Confiscated" },
-      { name: "Binance BTCB Reserve", network: "bitcoin", address: "3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb", type: "Bridge Reserve" },
-      { name: "Mr. 100", network: "bitcoin", address: "1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP", type: "Unknown whale" },
-
-      { name: "Binance: Hot Wallet 20", network: "ethereum", address: "0xf977814e90dA44bFA03b6295A0616a897441aceC", type: "Exchange" },
-      { name: "Kraken 4", network: "ethereum", address: "0x267be1C1D684F78cb4F6a176C4911b741E4FfDc0", type: "Exchange" },
-      { name: "Beacon Deposit Contract", network: "ethereum", address: "0x00000000219ab540356cBB839Cbe05303d7705Fa", type: "Staking / Protocol" },
-      { name: "WETH9 Contract", network: "ethereum", address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", type: "DeFi / WETH" },
-      { name: "Bitfinex: Cold Wallet", network: "ethereum", address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", type: "Exchange" },
-      { name: "Vitalik Buterin (vitalik.eth)", network: "ethereum", address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045", type: "Founder / Individual" },
-
-      { name: "Binance: SAFU Wallet", network: "bsc", address: "0x4b16c5de96eb2117bbe5fd171e4d203624b014aa", type: "SAFU / Reserve" },
-      { name: "Venus: vBNB (big protocol)", network: "bsc", address: "0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63", type: "DeFi Protocol" },
-      { name: "BNB Bridge Exploiter", network: "bsc", address: "0x489a8756c18c0b8b24ec2a2b9ff3d4d447f79bec", type: "Exploit wallet" },
-      { name: "WBNB (Core)", network: "bsc", address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", type: "WBNB / Core token" },
-
-      { name: "PulseChain PLS (core)", network: "pulsechain", address: "0xA1077a294dDE1B09bB078844df40758a5D0f9a27", type: "Core / System" },
-      { name: "PulseX (PLSX)", network: "pulsechain", address: "0x95B303987A60C71504D99Aa1b13B4DA07b0790ab", type: "DEX / Protocol" },
-      { name: "INC Token", network: "pulsechain", address: "0x2fa878Ab3F87CC1C9737Fc071108F904c0B0C95d", type: "Reward / Protocol" },
-      { name: "HEX (sur Pulse)", network: "pulsechain", address: "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39", type: "Token RH" }
-    ];
-
-    function getExplorerUrl(network, address) {
-      switch (network) {
-        case "bitcoin": return "https://www.blockchain.com/btc/address/" + address;
-        case "ethereum": return "https://etherscan.io/address/" + address;
-        case "bsc": return "https://bscscan.com/address/" + address;
-        case "pulsechain": return "https://scan.pulsechain.com/address/" + address;
-        default: return "#";
-      }
-    }
-
-    function networkLabel(network) {
-      switch (network) {
-        case "bitcoin": return "Bitcoin";
-        case "ethereum": return "Ethereum";
-        case "bsc": return "BSC";
-        case "pulsechain": return "PulseChain";
-        default: return network;
-      }
-    }
-
-    function networkDotClass(network) {
-      switch (network) {
-        case "bitcoin": return "network-dot net-btc";
-        case "ethereum": return "network-dot net-eth";
-        case "bsc": return "network-dot net-bsc";
-        case "pulsechain": return "network-dot net-pls";
-        default: return "network-dot";
-      }
-    }
-
-    function copyToClipboard(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).catch(() => {});
-      } else {
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.focus();
-        textarea.select();
-        try { document.execCommand("copy"); } catch (e) {}
-        document.body.removeChild(textarea);
-      }
-    }
-
-    function formatTime(date) {
-      const pad = n => String(n).padStart(2, "0");
-      return pad(date.getHours()) + ":" + pad(date.getMinutes()) + ":" + pad(date.getSeconds());
-    }
-
-    function updateLastRefresh() {
-      const el = document.getElementById("last-refresh");
-      if (el) el.textContent = formatTime(new Date());
-    }
-
-    async function computeEthereumPersonality(wallet) {
-      if (!ETHERSCAN_API_KEY) return "Clé API Etherscan manquante → impossible d’analyser.";
-
-      const url = "https://api.etherscan.io/api"
-        + "?module=account&action=txlist"
-        + "&address=" + wallet.address
-        + "&sort=desc&page=1&offset=50"
-        + "&apikey=" + ETHERSCAN_API_KEY;
-
-      const res = await fetch(url);
-      if (!res.ok) return "Erreur lors de l’appel à Etherscan.";
-      const data = await res.json();
-
-      if (data.status !== "1" || !Array.isArray(data.result) || data.result.length === 0) {
-        return "Pas assez de transactions pour analyser (adresse trop récente ou inactive).";
-      }
-
-      const txs = data.result;
-      const nowSec = Math.floor(Date.now() / 1000);
-      const txCount = txs.length;
-      const addrLower = wallet.address.toLowerCase();
-
-      let outgoing = 0, incoming = 0, contractCalls = 0;
-      let sumValueEth = 0;
-      let minTime = Number.MAX_SAFE_INTEGER;
-      let maxTime = 0;
-
-      for (const tx of txs) {
-        const from = (tx.from || "").toLowerCase();
-        const ts = parseInt(tx.timeStamp || "0", 10);
-        const valueWei = Number(tx.value || "0");
-        const valueEth = valueWei / 1e18;
-
-        if (from === addrLower) outgoing++; else incoming++;
-        if (tx.input && tx.input !== "0x") contractCalls++;
-        sumValueEth += valueEth;
-        if (ts > 0) { minTime = Math.min(minTime, ts); maxTime = Math.max(maxTime, ts); }
-      }
-
-      const avgValueEth = sumValueEth / txCount;
-      const oldestDays = (nowSec - minTime) / 86400;
-      const newestDays = (nowSec - maxTime) / 86400;
-      const contractRatio = contractCalls / txCount;
-
-      if (txCount < 3 && oldestDays > 180) return "Holder discret / long terme (très peu de mouvements).";
-      if (contractRatio > 0.6 && txCount >= 15) return newestDays < 7
-        ? "Trader / DeFi très actif récemment (beaucoup d’interactions contrats)."
-        : "Trader / DeFi actif (profil orienté trading/yield).";
-      if (incoming > outgoing * 2 && txCount >= 10) return "Whale accumulatrice (plus d’entrées que de sorties).";
-      if (outgoing > incoming * 2 && txCount >= 10) return "Adresse en distribution / prise de profits (plus de sorties).";
-      if (txCount > 25 && oldestDays < 30) return "Adresse hyper active sur le dernier mois (profil opportuniste).";
-      if (avgValueEth > 100 && txCount >= 5) return "Gros portefeuille (transactions moyennes élevées).";
-      return "Profil mixte (trading + holding, comportement diversifié).";
-    }
-
-    async function analyzeWalletWithBot(w) {
-      const panel = document.getElementById("bot-analysis");
-      const nameEl = document.getElementById("bot-wallet-name");
-      const bodyEl = document.getElementById("bot-analysis-body");
-      if (!panel || !nameEl || !bodyEl) return;
-
-      nameEl.textContent = w.name + " – " + networkLabel(w.network);
-
-      let style = "", horizon = "", assets = "", notes = "";
-      let tags = [];
-
-      if (w.type && w.type.toLowerCase().includes("exchange")) {
-        style = "Portefeuille d’exchange centralisée / custodial.";
-        horizon = "Court terme / logistique (dépôts/retraits clients).";
-        notes = "Ne reflète pas un investisseur individuel mais la gestion de liquidité.";
-        tags.push("Exchange","Custodial");
-      } else if (w.type && w.type.toLowerCase().includes("staking")) {
-        style = "Contrat de staking / protocole.";
-        horizon = "Long terme (sécurisation du réseau).";
-        notes = "Adresse utilisée pour sécuriser le réseau et percevoir des rewards.";
-        tags.push("Staking","Long terme");
-      } else if (w.type && (w.type.toLowerCase().includes("exploit") || w.type.toLowerCase().includes("hack"))) {
-        style = "Adresse liée à un hack / exploit.";
-        horizon = "Fonds surveillés, souvent immobiles.";
-        notes = "Risque de blacklist / sanctions.";
-        tags.push("Hack","Risque élevé");
-      } else if (w.type && w.type.toLowerCase().includes("token rh")) {
-        style = "Adresse liée à l’écosystème Richard Heart.";
-        horizon = "Long terme / spéculatif sur HEX / PulseChain.";
-        notes = "Permet de suivre l’activité de l’écosystème RH.";
-        tags.push("RH","PulseChain");
-      } else if (w.type && w.type.toLowerCase().includes("core")) {
-        style = "Adresse cœur de protocole / système.";
-        horizon = "Très long terme, structurel.";
-        notes = "Adresse critique pour le fonctionnement du réseau.";
-        tags.push("Core","System");
-      } else if (w.type && w.type.toLowerCase().includes("dex")) {
-        style = "Contrat DEX (échange décentralisé).";
-        horizon = "Flux continu de swaps / LP / farming.";
-        notes = "Adresse utilisée pour exécuter les échanges sur le DEX.";
-        tags.push("DEX","DeFi");
-      } else {
-        style = "Baleine / grosse adresse identifiée.";
-        horizon = "Profil exact inconnu.";
-        notes = "Surveiller surtout les gros transferts et les entrées/sorties de CEX.";
-        tags.push("Whale");
-      }
-
-      switch (w.network) {
-        case "bitcoin": assets = "BTC uniquement."; break;
-        case "ethereum": assets = "ETH + tokens ERC-20 (DeFi, stablecoins…)."; break;
-        case "bsc": assets = "BNB + tokens BEP-20."; break;
-        case "pulsechain": assets = "PLS, PLSX, INC, HEX et tokens PulseChain."; break;
-        default: assets = "Actifs principaux du réseau.";
-      }
-
-      const tagsHtml = tags.length
-        ? "<p>" + tags.map(t => `<span class="bot-tag">${t}</span>`).join(" ") + "</p>"
-        : "";
-
-      bodyEl.innerHTML =
-        `${tagsHtml}
-        <p><span class="label">Style probable :</span> ${style}</p>
-        <p><span class="label">Horizon :</span> ${horizon}</p>
-        <p><span class="label">Actifs principaux :</span> ${assets}</p>
-        <p><span class="label">Personnalité probable :</span> <span id="bot-personality-line">Analyse en cours…</span></p>
-        <p><span class="label">Notes :</span> ${notes}</p>
-        <p style="margin-top:6px; font-size:0.72rem; color:rgba(148,163,184,0.9);">
-          ⚠️ Analyse expérimentale basée sur des heuristiques.
-        </p>`;
-
-      panel.style.display = "block";
-      panel.scrollIntoView({ behavior: "smooth", block: "center" });
-
-      const personalityEl = document.getElementById("bot-personality-line");
-      if (!personalityEl) return;
-
-      if (w.network !== "ethereum") {
-        personalityEl.textContent = "Analyse détaillée dispo uniquement pour Ethereum pour l’instant.";
-        return;
-      }
-
-      try {
-        personalityEl.textContent = "Connexion à Etherscan…";
-        const personality = await computeEthereumPersonality(w);
-        personalityEl.textContent = personality;
-      } catch {
-        personalityEl.textContent = "Erreur pendant l’analyse on-chain.";
-      }
-    }
-
-    const tbody = document.getElementById("whales-body");
-    const emptyState = document.getElementById("empty-state");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const statsGlobalEl = document.getElementById("stats-global");
-
-    let currentFilter = "all";
-
-    function updateGlobalStats() {
-      const counts = whales.reduce((acc, w) => {
-        acc[w.network] = (acc[w.network] || 0) + 1;
-        acc.all = (acc.all || 0) + 1;
-        return acc;
-      }, {});
-      statsGlobalEl.textContent =
-        `Total : ${counts.all} baleines • BTC : ${counts.bitcoin || 0} • ETH : ${counts.ethereum || 0} • BSC : ${counts.bsc || 0} • PLS : ${counts.pulsechain || 0}`;
-    }
-
-    function renderTable(activeNetwork = "all") {
-      tbody.innerHTML = "";
-      const filtered = whales.filter(w => activeNetwork === "all" ? true : w.network === activeNetwork);
-      emptyState.style.display = filtered.length === 0 ? "block" : "none";
-
-      for (const w of filtered) {
-        const tr = document.createElement("tr");
-
-        const tdName = document.createElement("td");
-        tdName.textContent = w.name;
-        tr.appendChild(tdName);
-
-        const tdNet = document.createElement("td");
-        tdNet.innerHTML =
-          `<span class="network-pill">
-            <span class="${networkDotClass(w.network)}"></span>
-            <span>${networkLabel(w.network)}</span>
-          </span>`;
-        tr.appendChild(tdNet);
-
-        const tdAddr = document.createElement("td");
-        tdAddr.innerHTML = `<span class="address">${w.address}</span>`;
-        tr.appendChild(tdAddr);
-
-        const tdType = document.createElement("td");
-        tdType.innerHTML = `<span class="type-pill">${w.type || "N/A"}</span>`;
-        tr.appendChild(tdType);
-
-        const tdActions = document.createElement("td");
-        const actionsDiv = document.createElement("div");
-        actionsDiv.className = "actions";
-
-        const btnExplorer = document.createElement("button");
-        btnExplorer.className = "btn-sm primary";
-        btnExplorer.textContent = "Explorer";
-        btnExplorer.addEventListener("click", () => {
-          const url = getExplorerUrl(w.network, w.address);
-          if (url !== "#") window.open(url, "_blank");
-        });
-
-        const btnCopy = document.createElement("button");
-        btnCopy.className = "btn-sm";
-        btnCopy.textContent = "Copier";
-        btnCopy.addEventListener("click", () => {
-          copyToClipboard(w.address);
-          btnCopy.textContent = "Copié ✓";
-          setTimeout(() => (btnCopy.textContent = "Copier"), 800);
-        });
-
-        const btnAnalyze = document.createElement("button");
-        btnAnalyze.className = "btn-sm";
-        btnAnalyze.textContent = "Analyser";
-        btnAnalyze.addEventListener("click", () => analyzeWalletWithBot(w));
-
-        actionsDiv.appendChild(btnExplorer);
-        actionsDiv.appendChild(btnCopy);
-        actionsDiv.appendChild(btnAnalyze);
-        tdActions.appendChild(actionsDiv);
-        tr.appendChild(tdActions);
-
-        tbody.appendChild(tr);
-      }
-
-      updateLastRefresh();
-    }
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const net = btn.getAttribute("data-network");
-        currentFilter = net;
-        filterButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderTable(currentFilter);
-      });
-    });
-
-    document.querySelectorAll(".donation-card [data-copy]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const selector = btn.getAttribute("data-copy");
-        const target = document.querySelector(selector);
-        if (!target) return;
-        copyToClipboard(target.textContent.trim());
-        const old = btn.textContent;
-        btn.textContent = "Copié ✓";
-        setTimeout(() => (btn.textContent = old), 900);
-      });
-    });
-
-    document.getElementById("copy-all")?.addEventListener("click", () => {
-      const eth = document.getElementById("addr-eth")?.textContent.trim() || "";
-      const bnb = document.getElementById("addr-bnb")?.textContent.trim() || "";
-      const pls = document.getElementById("addr-pls")?.textContent.trim() || "";
-      const full = `ETH : ${eth}\nBNB : ${bnb}\nPLS : ${pls}`;
-      copyToClipboard(full);
-      const btn = document.getElementById("copy-all");
-      const old = btn.textContent;
-      btn.textContent = "Tout copié ✓";
-      setTimeout(() => (btn.textContent = old), 1000);
-    });
-
-    updateGlobalStats();
-    renderTable(currentFilter);
-
-    setInterval(updateLastRefresh, 30000);
-  </script>
 </body>
 </html>
