@@ -490,6 +490,27 @@
     .site-footer a { color:#22c55e; text-decoration:none; }
     .site-footer a:hover { text-decoration: underline; }
 
+    /* ✅ Petit lien Ledger footer, discret */
+    .footer-affiliate {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.28);
+      background: rgba(15,23,42,0.55);
+      color: rgba(209,213,219,0.92);
+      text-decoration: none;
+      transition: transform .12s ease-out, box-shadow .12s ease-out, border-color .12s ease-out;
+      white-space: nowrap;
+    }
+
+    .footer-affiliate:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 14px rgba(34,197,94,0.35);
+      border-color: rgba(34,197,94,0.55);
+    }
+
     @media (max-width: 800px) {
       body { padding: 12px; }
       .card { padding: 16px; }
@@ -626,7 +647,9 @@
           <div class="partner-card">
             <strong>🔐 Ledger Wallet</strong>
             <span>Protégez vos clés privées hors-ligne.</span><br>
-            <a href="https://ton-lien-affiliation-ledger.com" target="_blank" rel="noopener">Obtenir un Ledger →</a>
+            <a href="https://shop.ledger.com/?r=efleb2c79d59" target="_blank" rel="noopener">
+              Obtenir un Ledger →
+            </a>
           </div>
 
           <div class="partner-card">
@@ -651,6 +674,14 @@
 
   <footer class="site-footer">
     <div>© 2025 WhaleTracker • Tous droits réservés.</div>
+
+    <!-- ✅ Lien Ledger discret en footer -->
+    <a class="footer-affiliate"
+       href="https://shop.ledger.com/?r=efleb2c79d59"
+       target="_blank" rel="noopener">
+      🔐 Sécurité recommandée : Ledger
+    </a>
+
     <div class="site-footer-links">
       <a href="legal.html">Mentions légales</a>
       <a href="privacy.html">Politique de confidentialité</a>
@@ -1014,4 +1045,4 @@
     setInterval(updateLastRefresh, 30000);
   </script>
 </body>
-</html>                                        voila le code complet reffais le entierement merci
+</html>
