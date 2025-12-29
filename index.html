@@ -12,450 +12,418 @@
     crossorigin="anonymous"></script>
 
   <style>
-    :root {
-      --bg: #050816;
-      --bg-soft: #0b1020;
-      --card: #0f172a;
-      --accent: #22c55e;
-      --accent-soft: #15803d;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --danger: #ef4444;
-      --radius-lg: 16px;
-      --shadow-soft: 0 18px 45px rgba(0,0,0,0.45);
+    :root{
+      --bg:#050816;
+      --bg-soft:#0b1020;
+      --card:#0f172a;
+      --accent:#22c55e;
+      --accent-soft:#15803d;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+      --danger:#ef4444;
+      --radius-lg:16px;
+      --shadow-soft:0 18px 45px rgba(0,0,0,.45);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      overflow-x: hidden;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#1f2937 0,#020617 45%,#000 100%);
+      color:var(--text);
+      min-height:100vh;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      position:relative;
+      overflow-x:hidden;
     }
-    .container { width: 100%; max-width: 1200px; flex: 1 0 auto; }
-    .card {
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.92));
-      border-radius: 24px;
-      padding: 24px 24px 28px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148,163,184,0.18);
-      backdrop-filter: blur(18px);
-      position: relative;
-      overflow: hidden;
+    .container{width:100%;max-width:1200px;flex:1 0 auto}
+    .card{
+      background:radial-gradient(circle at top left,rgba(15,23,42,.98),rgba(15,23,42,.92));
+      border-radius:24px;
+      padding:24px 24px 28px;
+      box-shadow:var(--shadow-soft);
+      border:1px solid rgba(148,163,184,.18);
+      backdrop-filter:blur(18px);
+      position:relative;
+      overflow:hidden;
     }
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      right: -80px;
-      width: 700px;
-      height: 700px;
-      background-image: url("baleine.webp");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: top right;
-      opacity: 0.26;
-      pointer-events: none;
-      filter: drop-shadow(0 0 28px rgba(56,189,248,0.35));
-      z-index: 0;
+    .card::before{
+      content:"";
+      position:absolute;
+      top:-40px;
+      right:-80px;
+      width:700px;
+      height:700px;
+      background-image:url("baleine.webp");
+      background-repeat:no-repeat;
+      background-size:contain;
+      background-position:top right;
+      opacity:.26;
+      pointer-events:none;
+      filter:drop-shadow(0 0 28px rgba(56,189,248,.35));
+      z-index:0;
     }
-    .card > * { position: relative; z-index: 1; }
+    .card>*{position:relative;z-index:1}
 
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-      align-items: center;
+    .header{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:8px;
+      align-items:center;
     }
-    .title-block h1 {
-      font-size: 1.5rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .title-block h1{
+      font-size:1.5rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
-    .title-block p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; }
-    .badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.3);
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(15,23,42,0.72);
-      backdrop-filter: blur(10px);
-    }
-    .badge span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34,197,94,0.7);
+    .title-block p{
+      font-size:.85rem;
+      color:var(--muted);
+      margin-top:4px;
     }
 
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 6px; }
-    .filter-btn {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.3);
-      background: rgba(15,23,42,0.9);
-      color: var(--muted);
-      font-size: 0.8rem;
-      padding: 6px 14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease-out;
+    .badges{display:flex;flex-wrap:wrap;gap:8px;font-size:.75rem}
+    .badge{
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.3);
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(15,23,42,.72);
+      backdrop-filter:blur(10px);
     }
-    .filter-btn.active {
-      background: radial-gradient(circle at top left, #22c55e, #15803d 60%, #052e16 100%);
-      border-color: rgba(34,197,94,0.8);
-      color: #ecfdf5;
-      box-shadow: 0 0 18px rgba(34,197,94,0.55);
-    }
-    .filter-btn span.pill-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(148,163,184,0.8); }
-    .filter-btn.active span.pill-dot { background: white; }
-
-    /* 🔹 Bouton AutoPilot (discret, informatif) */
-    .autopilot-btn {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.35);
-      background: rgba(15,23,42,0.75);
-      color: var(--muted);
-      font-size: 0.8rem;
-      padding: 6px 14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      transition: all 0.15s ease-out;
-      white-space: nowrap;
-    }
-    .autopilot-btn:hover {
-      color: #ecfdf5;
-      border-color: rgba(34,197,94,0.55);
-      box-shadow: 0 0 14px rgba(34,197,94,0.35);
-      transform: translateY(-0.5px);
-    }
-    .autopilot-btn span.dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(34,197,94,0.85);
-      box-shadow: 0 0 8px rgba(34,197,94,0.6);
+    .badge span.dot{
+      width:7px;height:7px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 10px rgba(34,197,94,.7);
     }
 
-    .stats-global { font-size: 0.75rem; color: var(--muted); margin-bottom: 10px; }
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+    .filter-btn{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.3);
+      background:rgba(15,23,42,.9);
+      color:var(--muted);
+      font-size:.8rem;
+      padding:6px 14px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      transition:all .15s ease-out;
+    }
+    .filter-btn.active{
+      background:radial-gradient(circle at top left,#22c55e,#15803d 60%,#052e16 100%);
+      border-color:rgba(34,197,94,.8);
+      color:#ecfdf5;
+      box-shadow:0 0 18px rgba(34,197,94,.55);
+    }
+    .filter-btn span.pill-dot{width:8px;height:8px;border-radius:999px;background:rgba(148,163,184,.8)}
+    .filter-btn.active span.pill-dot{background:#fff}
 
-    /* ✅ BLOC SPONSORISÉ (à gauche, réduit, ne touche plus la baleine) */
-    .sponsor-hero {
-      margin: 12px 0 14px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(148,163,184,0.35);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.92), rgba(15,23,42,0.85));
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      width: 58%;
-      max-width: 640px;
-      margin-right: auto;
-      margin-left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 92px;
-    }
-    .sponsor-left { display: flex; flex-direction: column; gap: 6px; }
-    .sponsor-pill {
-      width: fit-content;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.7);
-      background: rgba(34,197,94,0.12);
-      color: #bbf7d0;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .sponsor-title { font-size: 1.05rem; font-weight: 700; }
-    .sponsor-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.35; }
-    .sponsor-cta {
-      border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.9);
-      background: radial-gradient(circle at top, rgba(34,197,94,0.25), rgba(15,23,42,1));
-      color: #ecfdf5;
-      padding: 10px 16px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: transform .12s ease-out, box-shadow .12s ease-out, background .12s ease-out;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .sponsor-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 18px rgba(34,197,94,0.45);
-      background: rgba(15,23,42,1);
-    }
+    .stats-global{font-size:.75rem;color:var(--muted);margin-bottom:10px}
 
-    .table-wrapper {
-      border-radius: 16px;
-      border: 1px solid rgba(148,163,184,0.2);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.98), rgba(15,23,42,0.9));
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      display: block;
+    /* Sponsor Bitget */
+    .sponsor-hero{
+      margin:12px 0 14px;
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px dashed rgba(148,163,184,.35);
+      background:radial-gradient(circle at top,rgba(15,23,42,.92),rgba(15,23,42,.85));
+      box-shadow:0 10px 26px rgba(0,0,0,.35);
+      width:58%;
+      max-width:640px;
+      margin-right:auto;
+      margin-left:0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-height:92px;
     }
-    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 620px; }
-    thead { background: rgba(15,23,42,0.98); position: sticky; top: 0; z-index: 2; }
-    th, td {
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 1px solid rgba(30,41,59,0.9);
-      white-space: nowrap;
+    .sponsor-left{display:flex;flex-direction:column;gap:6px}
+    .sponsor-pill{
+      width:fit-content;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.7);
+      background:rgba(34,197,94,.12);
+      color:#bbf7d0;
+      font-size:.72rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
-    th {
-      font-weight: 600;
-      color: rgba(148,163,184,0.95);
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    .sponsor-title{font-size:1.05rem;font-weight:700}
+    .sponsor-sub{font-size:.82rem;color:var(--muted);line-height:1.35}
+    .sponsor-cta{
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.9);
+      background:radial-gradient(circle at top,rgba(34,197,94,.25),rgba(15,23,42,1));
+      color:#ecfdf5;
+      padding:10px 16px;
+      font-size:.82rem;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:transform .12s ease-out, box-shadow .12s ease-out, background .12s ease-out;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
-    tbody tr {
-      background: rgba(15,23,42,0.85);
-      transition: background 0.15s ease-out, transform 0.12s ease-out, box-shadow 0.12s ease-out;
-    }
-    tbody tr:nth-child(even) { background: rgba(15,23,42,0.9); }
-    tbody tr:hover {
-      background: rgba(15,23,42,0.98);
-      box-shadow: 0 0 0 1px rgba(34,197,94,0.25);
-      transform: translateY(-1px);
+    .sponsor-cta:hover{
+      transform:translateY(-1px);
+      box-shadow:0 0 18px rgba(34,197,94,.45);
+      background:rgba(15,23,42,1);
     }
 
-    .network-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.35);
+    .table-wrapper{
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.2);
+      background:radial-gradient(circle at top,rgba(15,23,42,.98),rgba(15,23,42,.9));
+      overflow-x:auto;
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;
+      display:block;
     }
-    .network-dot { width: 8px; height: 8px; border-radius: 999px; }
-    .net-btc { background: #f97316; }
-    .net-eth { background: #6366f1; }
-    .net-bsc { background: #eab308; }
-    .net-pls { background: #22c55e; }
-
-    .address {
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.78rem;
-      color: #f9fafb;
+    table{width:100%;border-collapse:collapse;font-size:.8rem;min-width:620px}
+    thead{background:rgba(15,23,42,.98);position:sticky;top:0;z-index:2}
+    th,td{
+      padding:10px 12px;
+      text-align:left;
+      border-bottom:1px solid rgba(30,41,59,.9);
+      white-space:nowrap;
     }
-    .actions { display: flex; gap: 6px; }
-    .btn-sm {
-      font-size: 0.72rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.85);
-      background: radial-gradient(circle at top, rgba(34,197,94,0.23), rgba(15,23,42,1));
-      color: #bbf7d0;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.12s ease-out;
-      white-space: nowrap;
+    th{
+      font-weight:600;
+      color:rgba(148,163,184,.95);
+      font-size:.75rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
-    .btn-sm.primary {
-      border-color: rgba(34,197,94,1);
-      background: radial-gradient(circle at top, rgba(34,197,94,0.35), rgba(15,23,42,1));
-      color: #ecfdf5;
+    tbody tr{
+      background:rgba(15,23,42,.85);
+      transition:background .15s ease-out, transform .12s ease-out, box-shadow .12s ease-out;
     }
-    .btn-sm:hover {
-      background: rgba(15,23,42,1);
-      transform: translateY(-0.5px);
-      box-shadow: 0 0 12px rgba(34,197,94,0.5);
-    }
-    .btn-sm.primary:hover { box-shadow: 0 0 16px rgba(34,197,94,0.7); }
-
-    .type-pill {
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.35);
-      color: rgba(209,213,219,0.9);
-      background: rgba(15,23,42,0.9);
-    }
-    .empty-state { padding: 16px; text-align: center; font-size: 0.85rem; color: var(--muted); }
-
-    .bot-analysis {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(148,163,184,0.4);
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.9));
-      box-shadow: 0 12px 30px rgba(15,23,42,0.7);
-      font-size: 0.8rem;
-    }
-    .bot-analysis-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-    .bot-chip {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34,197,94,0.16);
-      border: 1px solid rgba(34,197,94,0.7);
-      color: #bbf7d0;
-      font-size: 0.75rem;
-    }
-    .bot-wallet-name { font-weight: 600; color: #e5e7eb; font-size: 0.8rem; text-align: right; }
-    .bot-analysis-body p { margin: 2px 0; }
-    .bot-analysis-body p span.label { color: var(--muted); }
-    .bot-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      font-size: 0.7rem;
-      margin-right: 4px;
-      margin-top: 2px;
+    tbody tr:nth-child(even){background:rgba(15,23,42,.9)}
+    tbody tr:hover{
+      background:rgba(15,23,42,.98);
+      box-shadow:0 0 0 1px rgba(34,197,94,.25);
+      transform:translateY(-1px);
     }
 
-    .footer-info {
-      display: flex;
-      justify-content: flex-end;
-      padding: 8px 12px 4px;
-      font-size: 0.75rem;
-      color: var(--muted);
+    .network-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:3px 9px;
+      border-radius:999px;
+      font-size:.75rem;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.35);
+    }
+    .network-dot{width:8px;height:8px;border-radius:999px}
+    .net-btc{background:#f97316}
+    .net-eth{background:#6366f1}
+    .net-bsc{background:#eab308}
+    .net-pls{background:#22c55e}
+
+    .address{
+      font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:.78rem;
+      color:#f9fafb;
+    }
+    .actions{display:flex;gap:6px}
+    .btn-sm{
+      font-size:.72rem;
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.85);
+      background:radial-gradient(circle at top,rgba(34,197,94,.23),rgba(15,23,42,1));
+      color:#bbf7d0;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      transition:all .12s ease-out;
+      white-space:nowrap;
+    }
+    .btn-sm.primary{
+      border-color:rgba(34,197,94,1);
+      background:radial-gradient(circle at top,rgba(34,197,94,.35),rgba(15,23,42,1));
+      color:#ecfdf5;
+    }
+    .btn-sm:hover{
+      background:rgba(15,23,42,1);
+      transform:translateY(-.5px);
+      box-shadow:0 0 12px rgba(34,197,94,.5);
+    }
+    .btn-sm.primary:hover{box-shadow:0 0 16px rgba(34,197,94,.7)}
+
+    .type-pill{
+      font-size:.72rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.35);
+      color:rgba(209,213,219,.9);
+      background:rgba(15,23,42,.9);
+    }
+    .empty-state{padding:16px;text-align:center;font-size:.85rem;color:var(--muted)}
+
+    .bot-analysis{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.4);
+      background:radial-gradient(circle at top left,rgba(15,23,42,.98),rgba(15,23,42,.9));
+      box-shadow:0 12px 30px rgba(15,23,42,.7);
+      font-size:.8rem;
+    }
+    .bot-analysis-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    .bot-chip{
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.7);
+      color:#bbf7d0;
+      font-size:.75rem;
+    }
+    .bot-wallet-name{font-weight:600;color:#e5e7eb;font-size:.8rem;text-align:right}
+    .bot-analysis-body p{margin:2px 0}
+    .bot-analysis-body p span.label{color:var(--muted)}
+    .bot-tag{
+      display:inline-flex;
+      align-items:center;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.4);
+      font-size:.7rem;
+      margin-right:4px;
+      margin-top:2px;
     }
 
-    /* DONATION */
-    .donation-card {
-      position: relative;
-      z-index: 3;
-      margin: 18px auto 10px;
-      width: 440px;
-      max-width: 100%;
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.92));
-      border-radius: 18px;
-      border: 1px solid rgba(148,163,184,0.35);
-      padding: 12px 16px 14px;
-      box-shadow: 0 14px 30px rgba(15,23,42,0.75);
+    .footer-info{
+      display:flex;
+      justify-content:flex-end;
+      padding:8px 12px 4px;
+      font-size:.75rem;
+      color:var(--muted);
     }
-    .donation-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:.86rem; }
-    .donation-header span.icon { font-size: 1.05rem; }
-    .donation-header strong { letter-spacing: 0.03em; }
-    .donation-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
-    .donation-row { display:flex; align-items:center; margin-top:4px; gap:6px; font-size:.78rem; }
-    .donation-label { width:42px; font-weight:600; color:#e5e7eb; }
-    .donation-address {
-      flex: 1;
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.75rem;
-      color: #d1d5db;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .donation-footer { display:flex; justify-content:flex-end; margin-top:8px; }
 
-    /* PARTENAIRES */
-    .partners-section {
-      margin: 18px 0 4px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(148,163,184,0.35);
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.97), rgba(15,23,42,0.9));
-      box-shadow: 0 10px 26px rgba(15,23,42,0.7);
-      font-size: 0.8rem;
+    /* Donation */
+    .donation-card{
+      position:relative;
+      z-index:3;
+      margin:18px auto 10px;
+      width:440px;
+      max-width:100%;
+      background:radial-gradient(circle at top left,rgba(15,23,42,.98),rgba(15,23,42,.92));
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.35);
+      padding:12px 16px 14px;
+      box-shadow:0 14px 30px rgba(15,23,42,.75);
     }
-    .partners-section h3 { font-size: 0.9rem; margin-bottom: 6px; }
-    .partners-section p { color: var(--muted); margin-bottom: 10px; font-size: 0.78rem; }
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
+    .donation-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.86rem}
+    .donation-header span.icon{font-size:1.05rem}
+    .donation-header strong{letter-spacing:.03em}
+    .donation-sub{font-size:.78rem;color:var(--muted);margin-bottom:6px}
+    .donation-row{display:flex;align-items:center;margin-top:4px;gap:6px;font-size:.78rem}
+    .donation-label{width:42px;font-weight:600;color:#e5e7eb}
+    .donation-address{
+      flex:1;
+      font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:.75rem;
+      color:#d1d5db;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
-    .partner-card {
-      padding: 8px 10px;
-      border-radius: 14px;
-      border: 1px solid rgba(148,163,184,0.35);
-      background: rgba(15,23,42,0.96);
+    .donation-footer{display:flex;justify-content:flex-end;margin-top:8px}
+
+    /* Partenaires */
+    .partners-section{
+      margin:18px 0 4px;
+      padding:14px 16px;
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.35);
+      background:radial-gradient(circle at top left,rgba(15,23,42,.97),rgba(15,23,42,.9));
+      box-shadow:0 10px 26px rgba(15,23,42,.7);
+      font-size:.8rem;
     }
-    .partner-card strong { display:block; margin-bottom:2px; }
-    .partner-card a { color:#22c55e; text-decoration:none; font-size:.78rem; }
-    .partner-card a:hover { text-decoration: underline; }
+    .partners-section h3{font-size:.9rem;margin-bottom:6px}
+    .partners-section p{color:var(--muted);margin-bottom:10px;font-size:.78rem}
+    .partners-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:10px;
+    }
+    .partner-card{
+      padding:8px 10px;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.35);
+      background:rgba(15,23,42,.96);
+    }
+    .partner-card strong{display:block;margin-bottom:2px}
+    .partner-card a{color:#22c55e;text-decoration:none;font-size:.78rem}
+    .partner-card a:hover{text-decoration:underline}
 
     /* Footer global */
-    .site-footer {
-      width: 100%;
-      max-width: 1200px;
-      flex-shrink: 0;
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(148,163,184,0.25);
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
+    .site-footer{
+      width:100%;
+      max-width:1200px;
+      flex-shrink:0;
+      margin-top:16px;
+      padding-top:12px;
+      border-top:1px solid rgba(148,163,184,.25);
+      font-size:.78rem;
+      color:var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:8px;
     }
-    .site-footer-links { display:flex; flex-wrap:wrap; gap:10px; }
-    .site-footer a { color:#22c55e; text-decoration:none; }
-    .site-footer a:hover { text-decoration: underline; }
+    .site-footer-links{display:flex;flex-wrap:wrap;gap:10px}
+    .site-footer a{color:#22c55e;text-decoration:none}
+    .site-footer a:hover{text-decoration:underline}
 
-    /* ✅ Petit lien Ledger footer, discret */
-    .footer-affiliate {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.28);
-      background: rgba(15,23,42,0.55);
-      color: rgba(209,213,219,0.92);
-      text-decoration: none;
-      transition: transform .12s ease-out, box-shadow .12s ease-out, border-color .12s ease-out;
-      white-space: nowrap;
+    .footer-affiliate{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.28);
+      background:rgba(15,23,42,.55);
+      color:rgba(209,213,219,.92);
+      text-decoration:none;
+      transition:transform .12s ease-out, box-shadow .12s ease-out, border-color .12s ease-out;
+      white-space:nowrap;
     }
-    .footer-affiliate:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 14px rgba(34,197,94,0.35);
-      border-color: rgba(34,197,94,0.55);
+    .footer-affiliate:hover{
+      transform:translateY(-1px);
+      box-shadow:0 0 14px rgba(34,197,94,.35);
+      border-color:rgba(34,197,94,.55);
     }
 
-    @media (max-width: 800px) {
-      body { padding: 12px; }
-      .card { padding: 16px; }
-      .header { align-items: flex-start; }
-      .donation-card { width: 100%; }
-      th:nth-child(4), td:nth-child(4) { display: none; }
-      .sponsor-hero { width: 100%; max-width: 100%; margin-left: 0; }
-      .site-footer { font-size: 0.75rem; flex-direction: column; align-items: flex-start; }
+    @media (max-width:800px){
+      body{padding:12px}
+      .card{padding:16px}
+      .header{align-items:flex-start}
+      .donation-card{width:100%}
+      th:nth-child(4),td:nth-child(4){display:none}
+      .sponsor-hero{width:100%;max-width:100%;margin-left:0}
+      .site-footer{font-size:.75rem;flex-direction:column;align-items:flex-start}
     }
   </style>
 </head>
@@ -486,23 +454,14 @@
         <button class="filter-btn" data-network="ethereum"><span class="pill-dot"></span> Ξ Ethereum</button>
         <button class="filter-btn" data-network="bsc"><span class="pill-dot"></span> BSC</button>
         <button class="filter-btn" data-network="pulsechain"><span class="pill-dot"></span> PulseChain</button>
-
-        <!-- 🔹 Bouton AutoPilot PulseChain (discret, informatif) -->
-        <a
-          href="https://whaletrackerio.github.io/autopilot-pulsechain/"
-          target="_blank"
-          rel="noopener"
-          class="autopilot-btn"
-          title="Découvrir le trading automatisé sur PulseChain"
-        >
-          <span class="dot"></span>
-          AutoPilot PulseChain
-        </a>
+        <button class="filter-btn" id="btn-autopilot" title="Découvrir AutoPilot PulseChain">
+          <span class="pill-dot"></span> AutoPilot PulseChain
+        </button>
       </div>
 
       <div id="stats-global" class="stats-global"></div>
 
-      <!-- ✅ Bitget (Option 1 : sobre & pro) -->
+      <!-- ✅ Bitget -->
       <div class="sponsor-hero">
         <div class="sponsor-left">
           <div class="sponsor-pill">Partenaire</div>
@@ -602,13 +561,14 @@
             </a>
           </div>
 
+          <!-- ✅ NordVPN (lien affilié validé) -->
           <div class="partner-card">
-            <strong>🛡️ VPN recommandé</strong>
+            <strong>🛡️ NordVPN (recommandé)</strong>
             <span>Sécurisez vos connexions à vos wallets & CEX.</span><br>
-            <a href="https://ton-lien-affiliation-vpn.com"
+            <a href="https://go.nordvpn.net/aff_c?offer_id=158&aff_id=137997&url_id=902"
                target="_blank"
                rel="noopener nofollow sponsored">
-              Activer l’offre VPN →
+              Activer NordVPN →
             </a>
           </div>
         </div>
@@ -669,8 +629,8 @@
       { name: "HEX (sur Pulse)", network: "pulsechain", address: "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39", type: "Token RH" }
     ];
 
-    function getExplorerUrl(network, address) {
-      switch (network) {
+    function getExplorerUrl(network, address){
+      switch(network){
         case "bitcoin": return "https://www.blockchain.com/btc/address/" + address;
         case "ethereum": return "https://etherscan.io/address/" + address;
         case "bsc": return "https://bscscan.com/address/" + address;
@@ -678,8 +638,8 @@
         default: return "#";
       }
     }
-    function networkLabel(network) {
-      switch (network) {
+    function networkLabel(network){
+      switch(network){
         case "bitcoin": return "Bitcoin";
         case "ethereum": return "Ethereum";
         case "bsc": return "BSC";
@@ -687,8 +647,8 @@
         default: return network;
       }
     }
-    function networkDotClass(network) {
-      switch (network) {
+    function networkDotClass(network){
+      switch(network){
         case "bitcoin": return "network-dot net-btc";
         case "ethereum": return "network-dot net-eth";
         case "bsc": return "network-dot net-bsc";
@@ -697,9 +657,9 @@
       }
     }
 
-    function copyToClipboard(text) {
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).catch(() => {});
+    function copyToClipboard(text){
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).catch(()=>{});
       } else {
         const textarea = document.createElement("textarea");
         textarea.value = text;
@@ -708,64 +668,64 @@
         document.body.appendChild(textarea);
         textarea.focus();
         textarea.select();
-        try { document.execCommand("copy"); } catch (e) {}
+        try{ document.execCommand("copy"); }catch(e){}
         document.body.removeChild(textarea);
       }
     }
 
-    function formatTime(date) {
-      const pad = n => String(n).padStart(2, "0");
+    function formatTime(date){
+      const pad = n => String(n).padStart(2,"0");
       return pad(date.getHours()) + ":" + pad(date.getMinutes()) + ":" + pad(date.getSeconds());
     }
-    function updateLastRefresh() {
+    function updateLastRefresh(){
       const el = document.getElementById("last-refresh");
-      if (el) el.textContent = formatTime(new Date());
+      if(el) el.textContent = formatTime(new Date());
     }
 
-    async function computeEthereumPersonality(wallet) {
-      if (!ETHERSCAN_API_KEY) return "Clé API Etherscan manquante → impossible d’analyser.";
+    async function computeEthereumPersonality(wallet){
+      if(!ETHERSCAN_API_KEY) return "Clé API Etherscan manquante → impossible d’analyser.";
 
       const params = new URLSearchParams({
-        module: "account",
-        action: "txlist",
-        address: wallet.address,
-        sort: "desc",
-        page: "1",
-        offset: "50",
-        apikey: ETHERSCAN_API_KEY
+        module:"account",
+        action:"txlist",
+        address:wallet.address,
+        sort:"desc",
+        page:"1",
+        offset:"50",
+        apikey:ETHERSCAN_API_KEY
       });
       const url = "https://api.etherscan.io/api?" + params.toString();
 
       const res = await fetch(url);
-      if (!res.ok) return "Erreur lors de l’appel à Etherscan.";
+      if(!res.ok) return "Erreur lors de l’appel à Etherscan.";
       const data = await res.json();
 
-      if (data.status !== "1" || !Array.isArray(data.result) || data.result.length === 0) {
+      if(data.status !== "1" || !Array.isArray(data.result) || data.result.length === 0){
         return "Pas assez de transactions pour analyser (adresse trop récente ou inactive).";
       }
 
       const txs = data.result;
-      const nowSec = Math.floor(Date.now() / 1000);
+      const nowSec = Math.floor(Date.now()/1000);
       const txCount = txs.length;
       const addrLower = wallet.address.toLowerCase();
 
-      let outgoing = 0, incoming = 0, contractCalls = 0;
-      let sumValueEth = 0;
+      let outgoing=0, incoming=0, contractCalls=0;
+      let sumValueEth=0;
       let minTime = Number.MAX_SAFE_INTEGER;
       let maxTime = 0;
 
-      for (const tx of txs) {
+      for(const tx of txs){
         const from = (tx.from || "").toLowerCase();
         const ts = parseInt(tx.timeStamp || "0", 10);
 
         const valueWei = Number(tx.value || "0");
         const valueEth = valueWei / 1e18;
 
-        if (from === addrLower) outgoing++; else incoming++;
-        if (tx.input && tx.input !== "0x") contractCalls++;
+        if(from === addrLower) outgoing++; else incoming++;
+        if(tx.input && tx.input !== "0x") contractCalls++;
 
         sumValueEth += valueEth;
-        if (ts > 0) { minTime = Math.min(minTime, ts); maxTime = Math.max(maxTime, ts); }
+        if(ts > 0){ minTime = Math.min(minTime, ts); maxTime = Math.max(maxTime, ts); }
       }
 
       const avgValueEth = sumValueEth / txCount;
@@ -773,71 +733,71 @@
       const newestDays = (nowSec - maxTime) / 86400;
       const contractRatio = contractCalls / txCount;
 
-      if (txCount < 3 && oldestDays > 180) return "Holder discret / long terme (très peu de mouvements).";
-      if (contractRatio > 0.6 && txCount >= 15) return newestDays < 7
+      if(txCount < 3 && oldestDays > 180) return "Holder discret / long terme (très peu de mouvements).";
+      if(contractRatio > 0.6 && txCount >= 15) return newestDays < 7
         ? "Trader / DeFi très actif récemment (beaucoup d’interactions contrats)."
         : "Trader / DeFi actif (profil orienté trading/yield).";
-      if (incoming > outgoing * 2 && txCount >= 10) return "Whale accumulatrice (plus d’entrées que de sorties).";
-      if (outgoing > incoming * 2 && txCount >= 10) return "Adresse en distribution / prise de profits (plus de sorties).";
-      if (txCount > 25 && oldestDays < 30) return "Adresse hyper active sur le dernier mois (profil opportuniste).";
-      if (avgValueEth > 100 && txCount >= 5) return "Gros portefeuille (transactions moyennes élevées).";
+      if(incoming > outgoing * 2 && txCount >= 10) return "Whale accumulatrice (plus d’entrées que de sorties).";
+      if(outgoing > incoming * 2 && txCount >= 10) return "Adresse en distribution / prise de profits (plus de sorties).";
+      if(txCount > 25 && oldestDays < 30) return "Adresse hyper active sur le dernier mois (profil opportuniste).";
+      if(avgValueEth > 100 && txCount >= 5) return "Gros portefeuille (transactions moyennes élevées).";
       return "Profil mixte (trading + holding, comportement diversifié).";
     }
 
-    async function analyzeWalletWithBot(w) {
+    async function analyzeWalletWithBot(w){
       const panel = document.getElementById("bot-analysis");
       const nameEl = document.getElementById("bot-wallet-name");
       const bodyEl = document.getElementById("bot-analysis-body");
-      if (!panel || !nameEl || !bodyEl) return;
+      if(!panel || !nameEl || !bodyEl) return;
 
       nameEl.textContent = w.name + " – " + networkLabel(w.network);
 
-      let style = "", horizon = "", assets = "", notes = "";
-      let tags = [];
+      let style="", horizon="", assets="", notes="";
+      let tags=[];
 
-      if (w.type && w.type.toLowerCase().includes("exchange")) {
-        style = "Portefeuille d’exchange centralisée / custodial.";
-        horizon = "Court terme / logistique (dépôts/retraits clients).";
-        notes = "Ne reflète pas un investisseur individuel mais la gestion de liquidité.";
+      if(w.type && w.type.toLowerCase().includes("exchange")){
+        style="Portefeuille d’exchange centralisée / custodial.";
+        horizon="Court terme / logistique (dépôts/retraits clients).";
+        notes="Ne reflète pas un investisseur individuel mais la gestion de liquidité.";
         tags.push("Exchange","Custodial");
-      } else if (w.type && w.type.toLowerCase().includes("staking")) {
-        style = "Contrat de staking / protocole.";
-        horizon = "Long terme (sécurisation du réseau).";
-        notes = "Adresse utilisée pour sécuriser le réseau et percevoir des rewards.";
+      } else if(w.type && w.type.toLowerCase().includes("staking")){
+        style="Contrat de staking / protocole.";
+        horizon="Long terme (sécurisation du réseau).";
+        notes="Adresse utilisée pour sécuriser le réseau et percevoir des rewards.";
         tags.push("Staking","Long terme");
-      } else if (w.type && (w.type.toLowerCase().includes("exploit") || w.type.toLowerCase().includes("hack"))) {
-        style = "Adresse liée à un hack / exploit.";
-        horizon = "Fonds surveillés, souvent immobiles.";
-        notes = "Risque de blacklist / sanctions.";
+      } else if(w.type && (w.type.toLowerCase().includes("exploit") || w.type.toLowerCase().includes("hack"))){
+        style="Adresse liée à un hack / exploit.";
+        horizon="Fonds surveillés, souvent immobiles.";
+        notes="Risque de blacklist / sanctions.";
         tags.push("Hack","Risque élevé");
-      } else if (w.type && w.type.toLowerCase().includes("token rh")) {
-        style = "Adresse liée à l’écosystème Richard Heart.";
-        horizon = "Long terme / spéculatif sur HEX / PulseChain.";
-        notes = "Permet de suivre l’activité de l’écosystème RH.";
+      } else if(w.type && w.type.toLowerCase().includes("token rh")){
+        style="Adresse liée à l’écosystème Richard Heart.";
+        horizon="Long terme / spéculatif sur HEX / PulseChain.";
+        notes="Permet de suivre l’activité de l’écosystème RH.";
         tags.push("RH","PulseChain");
-      } else if (w.type && w.type.toLowerCase().includes("core")) {
-        style = "Adresse cœur de protocole / système.";
-        horizon = "Très long terme, structurel.";
-        notes = "Adresse critique pour le fonctionnement du réseau.";
+      } else if(w.type && w.type.toLowerCase().includes("core")){
+        style="Adresse cœur de protocole / système.";
+        horizon="Très long terme, structurel.";
+        notes="Adresse critique pour le fonctionnement du réseau.";
         tags.push("Core","System");
-      } else if (w.type && w.type.toLowerCase().includes("dex")) {
-        style = "Contrat DEX (échange décentralisé).";
-        horizon = "Flux continu de swaps / LP / farming.";
-        notes = "Adresse utilisée pour exécuter les échanges sur le DEX.";
+      } else if(w.type && w.type.toLowerCase().includes("dex")){
+        style="Contrat DEX (échange décentralisé).";
+        horizon="Flux continu de swaps / LP / farming.";
+        notes="Adresse utilisée pour exécuter les échanges sur le DEX.";
         tags.push("DEX","DeFi");
       } else {
-        style = "Baleine / grosse adresse identifiée.";
-        horizon = "Profil exact inconnu.";
-        notes = "Surveiller surtout les gros transferts et les entrées/sorties de CEX.";
+        style="Baleine / grosse adresse identifiée.";
+        horizon="Profil exact inconnu.";
+        notes="Surveiller surtout les gros transferts et les entrées/sorties de CEX.";
         tags.push("Whale");
       }
 
-      switch (w.network) {
-        case "bitcoin": assets = "BTC uniquement."; break;
-        case "ethereum": assets = "ETH + tokens ERC-20 (DeFi, stablecoins…)."; break;
-        case "bsc": assets = "BNB + tokens BEP-20."; break;
-        case "pulsechain": assets = "PLS, PLSX, INC, HEX et tokens PulseChain."; break;
-        default: assets = "Actifs principaux du réseau.";
+      switch(w.network){
+        case "bitcoin": assets="BTC uniquement."; break;
+        case "ethereum": assets="ETH + tokens ERC-20 (DeFi, stablecoins…)."; break;
+        case "bsc": assets="BNB + tokens BEP-20."; break;
+        case "pulsechain": assets="PLS, PLSX, INC, HEX et tokens PulseChain."; break;
+        default: assets="Actifs principaux du réseau.";
       }
 
       const tagsHtml = tags.length
@@ -856,17 +816,17 @@
         </p>`;
 
       panel.style.display = "block";
-      panel.scrollIntoView({ behavior: "smooth", block: "center" });
+      panel.scrollIntoView({ behavior:"smooth", block:"center" });
 
       const personalityEl = document.getElementById("bot-personality-line");
-      if (!personalityEl) return;
+      if(!personalityEl) return;
 
-      if (w.network !== "ethereum") {
+      if(w.network !== "ethereum"){
         personalityEl.textContent = "Analyse détaillée dispo uniquement pour Ethereum pour l’instant.";
         return;
       }
 
-      try {
+      try{
         personalityEl.textContent = "Connexion à Etherscan…";
         const personality = await computeEthereumPersonality(w);
         personalityEl.textContent = personality;
@@ -881,7 +841,7 @@
     const statsGlobalEl = document.getElementById("stats-global");
     let currentFilter = "all";
 
-    function updateGlobalStats() {
+    function updateGlobalStats(){
       const counts = whales.reduce((acc, w) => {
         acc[w.network] = (acc[w.network] || 0) + 1;
         acc.all = (acc.all || 0) + 1;
@@ -891,13 +851,12 @@
         `Total : ${counts.all} baleines • BTC : ${counts.bitcoin || 0} • ETH : ${counts.ethereum || 0} • BSC : ${counts.bsc || 0} • PLS : ${counts.pulsechain || 0}`;
     }
 
-    function renderTable(activeNetwork = "all") {
+    function renderTable(activeNetwork="all"){
       tbody.innerHTML = "";
       const filtered = whales.filter(w => activeNetwork === "all" ? true : w.network === activeNetwork);
-
       emptyState.style.display = filtered.length === 0 ? "block" : "none";
 
-      for (const w of filtered) {
+      for(const w of filtered){
         const tr = document.createElement("tr");
 
         const tdName = document.createElement("td");
@@ -929,7 +888,7 @@
         btnExplorer.textContent = "Explorer";
         btnExplorer.addEventListener("click", () => {
           const url = getExplorerUrl(w.network, w.address);
-          if (url !== "#") window.open(url, "_blank");
+          if(url !== "#") window.open(url, "_blank");
         });
 
         const btnCopy = document.createElement("button");
@@ -958,9 +917,16 @@
       updateLastRefresh();
     }
 
+    // Filtres
     filterButtons.forEach(btn => {
       btn.addEventListener("click", () => {
+        const isAutopilot = btn.id === "btn-autopilot";
+        if(isAutopilot){
+          window.open("https://whaletrackerio.github.io/autopilot-pulsechain/", "_blank");
+          return;
+        }
         const net = btn.getAttribute("data-network");
+        if(!net) return;
         currentFilter = net;
         filterButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
@@ -968,11 +934,12 @@
       });
     });
 
+    // Copie donation
     document.querySelectorAll(".donation-card [data-copy]").forEach(btn => {
       btn.addEventListener("click", () => {
         const selector = btn.getAttribute("data-copy");
         const target = document.querySelector(selector);
-        if (!target) return;
+        if(!target) return;
         copyToClipboard(target.textContent.trim());
         const old = btn.textContent;
         btn.textContent = "Copié ✓";
