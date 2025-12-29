@@ -128,6 +128,36 @@
     .filter-btn span.pill-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(148,163,184,0.8); }
     .filter-btn.active span.pill-dot { background: white; }
 
+    /* 🔹 Bouton AutoPilot (discret, informatif) */
+    .autopilot-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.75);
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.15s ease-out;
+      white-space: nowrap;
+    }
+    .autopilot-btn:hover {
+      color: #ecfdf5;
+      border-color: rgba(34,197,94,0.55);
+      box-shadow: 0 0 14px rgba(34,197,94,0.35);
+      transform: translateY(-0.5px);
+    }
+    .autopilot-btn span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.85);
+      box-shadow: 0 0 8px rgba(34,197,94,0.6);
+    }
+
     .stats-global { font-size: 0.75rem; color: var(--muted); margin-bottom: 10px; }
 
     /* ✅ BLOC SPONSORISÉ (à gauche, réduit, ne touche plus la baleine) */
@@ -456,6 +486,18 @@
         <button class="filter-btn" data-network="ethereum"><span class="pill-dot"></span> Ξ Ethereum</button>
         <button class="filter-btn" data-network="bsc"><span class="pill-dot"></span> BSC</button>
         <button class="filter-btn" data-network="pulsechain"><span class="pill-dot"></span> PulseChain</button>
+
+        <!-- 🔹 Bouton AutoPilot PulseChain (discret, informatif) -->
+        <a
+          href="https://whaletrackerio.github.io/autopilot-pulsechain/"
+          target="_blank"
+          rel="noopener"
+          class="autopilot-btn"
+          title="Découvrir le trading automatisé sur PulseChain"
+        >
+          <span class="dot"></span>
+          AutoPilot PulseChain
+        </a>
       </div>
 
       <div id="stats-global" class="stats-global"></div>
